@@ -1,0 +1,24 @@
+Trabalho BD
+
+- Qual o tema escolhido
+	API Rest com servidor em Python e front em html utilizando Banco de Dados relacional MySQL
+
+- Por que o tema foi escolhido
+	Pela possibilidade de utilizar o banco de dados para varios clientes acessarem ao mesmo tempo via rede (HTTP)
+
+- Ferramentas usadas para atacar o problema
+	HTML para construcao de um formulario para inserir registros no BD, Python para fazer o servidor, noções de Rest para implementar a comunicação HTTP, prompt de comando para executar o servidor e monitorar as requisições e navegador para o cliente trabalhar com o servidor
+
+- Estratégia (metodologia) usada
+	Elaboração do servidor em Python, e testes com o próprio servidor;
+	Elaboração do front e teste junto com o servidor para consultas e inserções
+
+- O que se descobriu
+	Ao utilizar serviços web com banco de dados, mais usuarios podem utilizar a plataforma e trabalhar simultaneamente com o BD, com isso foi descoberto que apesar de ser muito improvavel poderia ocorrer deadlock entre os processos, e através disso foi implementado flags para o processo de escrita (lock)
+
+- Como o trabalho desenvolvido se relaciona com o conteúdo da disciplina
+	Com a utilização de Banco de dados diretamente e também com as definições vistas em sala, como acesso concorrente aos recursos, para leitura não tem problema nenhum, mas para escrita pode gerar deadlock
+
+- Conclusões
+	Com o trabalho proposto foi possível perceber o quanto um banco de dados facilita uma aplicação, sem ter que ficar tratando dados diretamente em arquivos, por exemplo JSON, mas com a utilização do banco de dados, alguns cuidados são importantes como o acesso concorrente que foi um problema percebido nessa proposta, mas que foi superado travando as operações de escrita mas deixando livre as operações de consulta. 
+	Com a utilização de serviços web foi possível perceber que se os recursos forem passados por GET, o usuário poderá ver todos os seus dados informados na url, mas outra pessoa que interceptar a requisição também poderá ver e alterar esses dados, por isso seria interessante utilizar o POST, onde os dados não são passados pela url. Os serviços web também facilitam no acesso à informação, a pessoa não precisa ter acesso diretamente ao banco de dados, sendo que ela poderá consultar tudo através do navegador.
